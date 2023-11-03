@@ -65,3 +65,21 @@ Feature: Disponibilidad en distintos sistemas operativos
     | Chambea Ya       |
     | MiApp Favorita   |
     | App IOS      |
+    
+#################################################################################
+
+Feature: Acceso a preguntas frecuentes
+  Como usuario de la aplicación, 
+  quiero acceder a las preguntas realizadas frecuentemente en una entrevista laboral 
+  para tener una preparación previa.
+
+  Scenario: El usuario accede a las preguntas más frecuentes de una entrevista laboral.
+    Given el usuario desea conocer las preguntas en una entrevista,
+    When seleccione la categoría de su preferencia,
+    And seleccione la opción "Preguntas frecuentes",
+    Then podrá visualizar las preguntas que se realizan con mayor frecuencia en una entrevista laboral.
+
+    Examples:
+    | Pregunta frecunte                |
+    | ¿Podrías contarme un poco de ti? | 
+    | ¿Cuáles son tus debilidades?     |
