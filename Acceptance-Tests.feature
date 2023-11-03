@@ -80,6 +80,27 @@ Feature: Acceso a preguntas frecuentes
     Then podrá visualizar las preguntas que se realizan con mayor frecuencia en una entrevista laboral.
 
     Examples:
-    | Pregunta frecunte                |
+    | Pregunta frecuente                |
     | ¿Podrías contarme un poco de ti? | 
     | ¿Cuáles son tus debilidades?     |
+
+#################################################################################
+
+Feature: Preguntas por categorías
+  Como usuario de la aplicación, 
+  quiero que las preguntas estén agrupadas según el tipo de empresa 
+  para que estas sean acordes a mis preferencias y necesidades.
+
+  Scenario: El usuario realiza la búsqueda de preguntas por categoría
+    Given el usuario desea visualizar las preguntas ordenadas por categorías,
+    When el usuario abra la aplicación en su dispositivo 
+    And visualice las categorías en la página principal,
+    And seleccione la categoría de su preferencia,
+    And seleccione la opción "Conocer preguntas frecuentes",
+    Then podrá visualizar las preguntas más frecuentes realizadas por categoría.
+
+    Examples:
+    | Categoría              |
+    | Ventas                 |
+    | Tecnología             |
+    | Servicio al Cliente    |
