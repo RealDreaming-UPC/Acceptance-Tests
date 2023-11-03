@@ -31,3 +31,37 @@ Feature: Registro e inicio de sesión
     | usuario1        | password123  |
     | user2           | abc123       |
     | miUsuario       | secreto456   |
+    
+#################################################################################
+
+Feature: Disponibilidad en distintos sistemas operativos
+  Como usuario de la aplicación,
+  quiero que esta se pueda utilizar en diversos dispositivos y sistemas operativos
+  para acceder a sus funcionalidades según mejor se me facilite.
+
+  Scenario: El usuario utiliza la aplicación en un dispositivo Android.
+    Given el usuario necesita acceder a la aplicación por medio de un dispositivo Android
+    When ingrese a la aplicación Play Store
+    And busque la aplicación "Chambea Ya"
+    And seleccione la opción "Instalar",
+    Then podrá acceder a la aplicación por medio de un dispositivo Android.
+
+    Examples:
+    | NombreApp        |
+    | Chambea Ya       |
+    | MiApp Favorita   |
+    | App Android      |
+
+
+  Scenario: El usuario utiliza la aplicación en un dispositivo IOS.
+    Given el usuario necesita acceder a la aplicación por medio de un dispositivo IOS
+    When ingrese a la aplicación App Store
+    And busque la aplicación "Chambea Ya"
+    And seleccione la opción "Instalar",
+    Then podrá acceder a la aplicación por medio de un dispositivo IOS.
+
+    Examples:
+    | NombreApp        |
+    | Chambea Ya       |
+    | MiApp Favorita   |
+    | App IOS      |
