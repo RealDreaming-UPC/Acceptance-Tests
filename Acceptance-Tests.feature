@@ -168,3 +168,21 @@ Feature: Diseño e interfaz de la aplicación
   | Experiencia de usuario |
   | Sin dificultades       |
   | Dificultades mínimas   |
+
+#################################################################################
+
+Feature: Lista de favoritos
+  Como persona desempleada, 
+  quiero seleccionar las categorías de mi agrado y agregarlas a una lista de favoritos 
+  para recibir constantemente notificaciones de ellas.
+
+  Scenario: El usuario agrega una categoría a su lista de favoritos
+    Given el usuario desea agregar una categoría a su lista de favoritos,
+    When el usuario encuentre una categoría de su interés,
+    And seleccione la opción "Agregar a favoritos",
+    Then la categoría será agregada a su lista de favoritos.
+
+    Examples:
+    | Resultado             |
+    | Categoría agregada    |
+    | Error en la operación |
