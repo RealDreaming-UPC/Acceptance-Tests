@@ -186,3 +186,22 @@ Feature: Lista de favoritos
     | Resultado             |
     | Categoría agregada    |
     | Error en la operación |
+
+#################################################################################
+
+Feature: Notificaciones de puestos laborales
+  Como persona desempleada, 
+  quiero que se me notifique cuando haya puestos laborales disponibles en empresas acordes a mi profesión 
+  para inscribirme y postular a alguna de ellas.
+
+  Scenario: El usuario es notificado sobre puestos laborales.
+    Given el usuario está en busca de conseguir un empleo,
+    When alguna empresa realice una convocatoria para contratar nuevas personas,
+    And la empresa esté dentro de su lista de favoritos,
+    And el usuario tenga activado la opción "Notificaciones Laborales",
+    Then el sistema le notificará al usuario sobre la nueva convocatoria.
+    
+    Examples:
+    | Resultado                  |
+    | Notificación enviada       |
+    | No se recibió notificación |
