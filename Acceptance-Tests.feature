@@ -133,3 +133,21 @@ Feature: Simulación de una entrevista laboral
   Examples:
   | Permiso de cámara | Permiso de micrófono  |
   | Habilitado        | Habilitado            |
+
+#################################################################################
+
+Feature: Feedbacks
+  Como usuario de la aplicación, 
+  quiero recibir un feedback sobre mis respuestas y desenvolvimiento 
+  para mejorar y perfeccionar mi desempeño antes de una entrevista.
+
+  Scenario: Usuario recibe un feedback de su entrevista
+    Given el usuario ha realizado una simulación de una entrevista
+    When finalice la entrevista,
+    And el usuario presione el botón "Finalizar simulación",
+    Then el usuario podrá visualizar los aspectos positivos y negativos de su desempeño durante la entrevista.
+
+  Examples:
+  | Resultado de la entrevista |
+  | Exitoso                    |
+  | Necesita mejorar           |
