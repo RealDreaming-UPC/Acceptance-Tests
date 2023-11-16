@@ -104,3 +104,32 @@ Feature: Preguntas por categorías
     | Ventas                 |
     | Tecnología             |
     | Servicio al Cliente    |
+
+#################################################################################
+
+Feature: Simulación de una entrevista laboral
+  Como usuario de la aplicación, 
+  quiero simular una entrevista de trabajo para practicar y prepararme 
+  para futuras entrevistas.
+
+  Scenario: El usuario habilita cámara y micrófono.
+    Given el usuario desea realizar una simulación de una entrevista laboral
+    And no tiene habilitado los permisos de cámara y micrófono, 
+    When el usuario seleccione la categoría de su preferencia,
+    And seleccione la opción "Simular entrevista"
+    Then aparecerán los mensajes "Permitir acceso al micrófono", "Permitir acceso a cámara".
+
+  Examples:
+  | Permiso de cámara | Permiso de micrófono  |
+  | No habilitado     | No habilitado         |
+
+  Scenario: El usuario realiza una simulación de una entrevista de trabajo
+    Given el usuario desea realizar una simulación de una entrevista laboral
+    And habilitó previamente los permisos de cámara y micrófono, 
+    When el usuario seleccione la categoría de su preferencia,
+    And seleccione la opción "Simular entrevista",
+    Then el usuario podrá realizar la simulación de una entrevista.
+
+  Examples:
+  | Permiso de cámara | Permiso de micrófono  |
+  | Habilitado        | Habilitado            |
