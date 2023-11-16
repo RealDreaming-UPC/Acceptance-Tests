@@ -151,3 +151,20 @@ Feature: Feedbacks
   | Resultado de la entrevista |
   | Exitoso                    |
   | Necesita mejorar           |
+
+#################################################################################
+
+Feature: Diseño e interfaz de la aplicación
+  Como usuario de la aplicación, 
+  quiero que esta cuente con un diseño e interfaz amigable 
+  para que sea sencillo y fácil de utilizar.
+
+  Scenario: El usuario usa la aplicación con facilidad
+    Given el usuario necesita utilizar la aplicación sin dificultades,
+    When el usuario ingrese a la aplicación visualizará una interfaz amigable,
+    Then no presentará ninguna dificultad al momento de utilizar la aplicación.
+
+  Examples:
+  | Experiencia de usuario |
+  | Sin dificultades       |
+  | Dificultades mínimas   |
