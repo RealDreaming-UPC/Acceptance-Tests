@@ -205,3 +205,44 @@ Feature: Notificaciones de puestos laborales
     | Resultado                  |
     | Notificación enviada       |
     | No se recibió notificación |
+
+#################################################################################
+
+Feature: Consejos diarios
+  Como persona que desea mejorar sus habilidades blandas, 
+  quiero recibir consejos diariamente sobre cómo mejorarlas 
+  para practicar y perfeccionar mi desenvolvimiento.
+
+  Scenario: El usuario recibe consejos para mejorar su desempeño.
+    Given el usuario desea recibir consejos para mejorar sus habilidades blandas,
+    When ingrese a la aplicación
+    And acceda al menú de opciones,
+    And seleccione la opción "Recibir consejos diarios",
+    Then el usuario recibirá consejos diarios en su bandeja de entrada. 
+    
+    Examples:
+    | Consejo                                           |
+    | Mejora tus habilidades de comunicación            |
+    | Practica tus habilidades de presentación          |
+    | Trabaja en el manejo del tiempo y la organización |
+
+#################################################################################
+
+Feature: Seguimiento del progreso en la aplicación
+  Como persona que desea mejorar sus habilidades blandas, 
+  quiero contar con un seguimiento de mi progreso 
+  para identificar áreas de mejora.
+
+  Scenario: El usuario visualiza su progreso en la plataforma
+    Given el usuario desea ver el seguimiento que ha realizado en la plataforma,
+    When ingrese a la aplicación,
+    And seleccione el menú de opciones, 
+    And seleccione el botón "Ver progreso",
+    Then el usuario podrá ver su feedback obtenido en cada entrevista, sus consejos para mejorar y su tiempo en la plataforma. 
+
+  Examples:
+  | Feedback                                                        |
+  | Tu respuesta a la pregunta de fortalezas fue muy sólida.        |
+  | Debes trabajar en tu contacto visual durante la entrevista.     |
+  | Has mostrado mejoras en tu manejo del tiempo en las respuestas. |
+  | Deberías reducir las pausas en tus respuestas.                  |
